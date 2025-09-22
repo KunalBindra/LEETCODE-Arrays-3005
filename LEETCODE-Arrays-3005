@@ -1,0 +1,16 @@
+class Solution {
+    public int maxFrequencyElements(int[] nums) {
+        int ans=0;
+        int[] freqs=new int[101];
+        for(int c:nums)
+        {
+            freqs[c]++;
+        }
+        int mfreq=Arrays.stream(freqs).max().getAsInt();
+        for(int freq:freqs )
+        {
+            if(freq==mfreq) ans+=freq;
+        }
+        return ans;
+    }
+}
